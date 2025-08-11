@@ -1,0 +1,229 @@
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FAF1E6;
+    color: #000000;
+}
+
+form {
+    background-color: #FDFAF6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin: 50px auto;
+}
+
+@keyframes errorAnimation {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(0); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+/* تنسيق مربعات الاختيار */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    appearance: none;
+    background-color: #FAF1E6;
+    border: 0px solid #000;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"]:checked {
+    background-color: #E4EFE7;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✔';
+    color: #99BC85;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* تنسيق النصوص والعناصر */
+label {
+    margin: 20px 10px;
+    font-size: 18px;
+    color: #000;
+}
+
+input[type="text"]#output {
+    width: 65%;
+    height: 40px;
+    padding: 10px;
+    padding-left: 10px;
+    margin: 10px 0;
+    border: 2px solid #FAF1E6;
+    background-color: #FAF1E6;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #000;
+}
+
+.generate-password {
+    display: block;
+    width: 130px;
+    padding: 5px;
+    margin: 30px auto;
+    background-color: #FAF1E6;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.generate-password:hover {
+    background-color: #FAF1E6;
+    color: #99BC85;
+    transform: scale(1.1);
+}
+
+.generate-password:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #99BC85;
+    box-shadow: 2 0 5px rgba(153, 188, 133, 0.5);
+}
+
+#copy_button {
+    background-color: #FAF1E6;
+    padding: 4px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    top: 7px;
+}
+
+#copy_button img {
+    height: 30px;
+    width: 30px;
+}
+
+#copy_button:hover img {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+#copy_button:active img {
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+#password-word {
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    padding-left: 10px;
+    margin: 10px 0;
+    border: 0px solid #FAF1E6;
+    background-color: #FAF1E6;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #000;
+    outline: none;
+}
+
+#password-length {
+    width: 70px;
+    height: 40px;
+    padding: 10px;
+    padding-left: 10px;
+    margin: 10px 0;
+    border: 2px solid #FAF1E6;
+    background-color: #FAF1E6;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #000;
+    outline: none;
+    appearance: textfield;
+}
+
+#password-length::-webkit-inner-spin-button,
+#password-length::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.notes {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    padding-left: 10px;
+    margin: 10px auto;
+    border: 2px solid #FAF1E6;
+    background-color: #FAF1E6;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #000;
+    outline: none;
+    resize: none;
+}
+
+/* Media Queries for responsiveness */
+
+/* عندما يكون عرض الشاشة 768px أو أقل */
+@media screen and (max-width: 768px) {
+    form {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    input[type="text"]#output, .generate-password, #password-word, #password-length {
+        width: 100%;
+    }
+
+    .notes {
+        width: 90%;
+    }
+}
+
+/* عندما يكون عرض الشاشة 480px أو أقل */
+@media screen and (max-width: 480px) {
+    form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    .generate-password {
+        width: 80%;
+        padding: 8px;
+    }
+
+    input[type="text"]#output, #password-word, #password-length {
+        width: 100%;
+    }
+}
